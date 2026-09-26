@@ -1,0 +1,18 @@
+,,Adult_icome_Feature_Registry ,,,,,
+index,feature,first_seen,stable,rejected,rejection_reason,avg_delta_auc,avg_delta_recall
+0,age_bins,EXP01_ALL_FEATURES,TRUE,FALSE,NaN,0.00111,0
+1,capital_net,EXP01_ALL_FEATURES,TRUE,FALSE,NaN,0.00111,0
+2,has_capital_activity,EXP01_ALL_FEATURES,TRUE,FALSE,NaN,0.00116,0
+3,hours_category,EXP01_ALL_FEATURES,TRUE,FALSE,NaN,0.00111,0
+4,edu_hours_interaction,EXP01_ALL_FEATURES,TRUE,FALSE,NaN,0.00125,0
+5,is_married,EXP01_ALL_FEATURES,TRUE,FALSE,NaN,0.00125,0
+6,is_high_edu,EXP01_ALL_FEATURES,TRUE,FALSE,NaN,0.00134,0
+7,high_capital_gain_flag,B_EXP01_ALL_AB,TRUE,FALSE,NaN,0.00172,0
+8,exec_managerial_flag,B_EXP01_ALL_AB,TRUE,FALSE,NaN,0.00168,0
+9,married_highEdu_interaction,B_EXP01_ALL_AB,TRUE,FALSE,NaN,0.00137,0
+10,age_edu_interaction,B_EXP01_ALL_AB,TRUE,FALSE,NaN,0.0015,0
+11,overtime_professional_flag,B_EXP01_ALL_AB,TRUE,FALSE,NaN,0.00168,0
+12,private_sector_flag,B_EXP01_ALL_AB,TRUE,FALSE,NaN,0.00168,0
+Show,,,,,,,
+per page,,,,,,,
+Like what you see? Visit the data table notebook to learn more about interactive tables.,,,,,,,

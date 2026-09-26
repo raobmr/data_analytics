@@ -1,0 +1,948 @@
+{
+    "run_date": "2026-03-12T00:28:34.818149",
+    "baseline": {
+        "auc_mean": 0.9200316454738549,
+        "auc_std": 0.0024983663636992427,
+        "f1_mean": 0.6806042393036924,
+        "f1_std": 0.00641321648008631,
+        "n_features": 12
+    },
+    "experiments": [
+        {
+            "experiment": "EXP01_ALL_FEATURES",
+            "timestamp": "2026-03-12T00:19:53.645047",
+            "toggles": {
+                "USE_AGE_BINS": true,
+                "USE_CAPITAL_NET": true,
+                "USE_CAPITAL_FLAG": true,
+                "USE_HOURS_CATEGORY": true,
+                "USE_EDU_HOURS": true,
+                "USE_MARITAL_BINARY": true,
+                "USE_HIGH_EDU_FLAG": true
+            },
+            "n_features": 19,
+            "new_features": [
+                "age_bins",
+                "capital_net",
+                "has_capital_activity",
+                "hours_category",
+                "edu_hours_interaction",
+                "is_married",
+                "is_high_edu"
+            ],
+            "auc_mean": 0.92065,
+            "auc_std": 0.00212,
+            "f1_mean": 0.68574,
+            "f1_std": 0.00816,
+            "delta_auc": 0.00062,
+            "delta_f1": 0.00514,
+            "runtime_s": 55.16,
+            "auc_cv": [
+                0.91775,
+                0.92163,
+                0.91849,
+                0.92304,
+                0.92233
+            ]
+        },
+        {
+            "experiment": "EXP02_CAPITAL_ONLY",
+            "timestamp": "2026-03-12T00:20:38.359234",
+            "toggles": {
+                "USE_CAPITAL_NET": true,
+                "USE_CAPITAL_FLAG": true
+            },
+            "n_features": 14,
+            "new_features": [
+                "capital_net",
+                "has_capital_activity"
+            ],
+            "auc_mean": 0.92,
+            "auc_std": 0.00235,
+            "f1_mean": 0.67916,
+            "f1_std": 0.00667,
+            "delta_auc": -0.00004,
+            "delta_f1": -0.00144,
+            "runtime_s": 44.71,
+            "auc_cv": [
+                0.91629,
+                0.92114,
+                0.91823,
+                0.92251,
+                0.92181
+            ]
+        },
+        {
+            "experiment": "EXP03_INTERACTION_MARITAL",
+            "timestamp": "2026-03-12T00:21:27.974406",
+            "toggles": {
+                "USE_EDU_HOURS": true,
+                "USE_MARITAL_BINARY": true,
+                "USE_HIGH_EDU_FLAG": true
+            },
+            "n_features": 15,
+            "new_features": [
+                "edu_hours_interaction",
+                "is_married",
+                "is_high_edu"
+            ],
+            "auc_mean": 0.92107,
+            "auc_std": 0.00253,
+            "f1_mean": 0.68737,
+            "f1_std": 0.00828,
+            "delta_auc": 0.00104,
+            "delta_f1": 0.00677,
+            "runtime_s": 49.61,
+            "auc_cv": [
+                0.91657,
+                0.92225,
+                0.92015,
+                0.92271,
+                0.92369
+            ]
+        },
+        {
+            "experiment": "EXP04_NO_HIGH_EDU",
+            "timestamp": "2026-03-12T00:22:24.675371",
+            "toggles": {
+                "USE_AGE_BINS": true,
+                "USE_CAPITAL_NET": true,
+                "USE_CAPITAL_FLAG": true,
+                "USE_HOURS_CATEGORY": true,
+                "USE_EDU_HOURS": true,
+                "USE_MARITAL_BINARY": true
+            },
+            "n_features": 18,
+            "new_features": [
+                "age_bins",
+                "capital_net",
+                "has_capital_activity",
+                "hours_category",
+                "edu_hours_interaction",
+                "is_married"
+            ],
+            "auc_mean": 0.92065,
+            "auc_std": 0.00213,
+            "f1_mean": 0.68571,
+            "f1_std": 0.00821,
+            "delta_auc": 0.00062,
+            "delta_f1": 0.00511,
+            "runtime_s": 56.7,
+            "auc_cv": [
+                0.91774,
+                0.92163,
+                0.9185,
+                0.92304,
+                0.92233
+            ]
+        },
+        {
+            "experiment": "EXP05_BINS_HOURS",
+            "timestamp": "2026-03-12T00:23:09.712624",
+            "toggles": {
+                "USE_AGE_BINS": true,
+                "USE_HOURS_CATEGORY": true
+            },
+            "n_features": 14,
+            "new_features": [
+                "age_bins",
+                "hours_category"
+            ],
+            "auc_mean": 0.92003,
+            "auc_std": 0.00251,
+            "f1_mean": 0.68028,
+            "f1_std": 0.00648,
+            "delta_auc": 0,
+            "delta_f1": -0.00033,
+            "runtime_s": 45.03,
+            "auc_cv": [
+                0.91635,
+                0.92074,
+                0.91802,
+                0.92327,
+                0.92177
+            ]
+        },
+        {
+            "experiment": "B_EXP01_ALL_AB",
+            "timestamp": "2026-03-12T00:24:49.467253",
+            "phase": "B",
+            "n_features": 25,
+            "new_features": [
+                "age_bins",
+                "capital_net",
+                "has_capital_activity",
+                "hours_category",
+                "edu_hours_interaction",
+                "is_married",
+                "is_high_edu",
+                "high_capital_gain_flag",
+                "exec_managerial_flag",
+                "married_highEdu_interaction",
+                "age_edu_interaction",
+                "overtime_professional_flag",
+                "private_sector_flag"
+            ],
+            "auc_mean": 0.92155,
+            "auc_std": 0.00207,
+            "f1_mean": 0.69008,
+            "f1_std": 0.00545,
+            "recall_mean": 0.61784,
+            "recall_std": 0.00775,
+            "precision_mean": 0.78161,
+            "delta_auc": 0.00152,
+            "delta_f1": 0.00948,
+            "delta_recall": 0,
+            "runtime_s": 38.29,
+            "recall_cv": [
+                0.60959,
+                0.61216,
+                0.62243,
+                0.6143,
+                0.63072
+            ],
+            "auc_cv": [
+                0.91832,
+                0.92161,
+                0.92036,
+                0.92393,
+                0.92353
+            ]
+        },
+        {
+            "experiment": "B_EXP02_FN_ONLY",
+            "timestamp": "2026-03-12T00:25:20.166240",
+            "phase": "B",
+            "n_features": 19,
+            "new_features": [
+                "has_capital_activity",
+                "high_capital_gain_flag",
+                "exec_managerial_flag",
+                "married_highEdu_interaction",
+                "age_edu_interaction",
+                "overtime_professional_flag",
+                "private_sector_flag"
+            ],
+            "auc_mean": 0.92161,
+            "auc_std": 0.00255,
+            "f1_mean": 0.69027,
+            "f1_std": 0.00636,
+            "recall_mean": 0.61784,
+            "recall_std": 0.00576,
+            "precision_mean": 0.78202,
+            "delta_auc": 0.00158,
+            "delta_f1": 0.00967,
+            "delta_recall": 0,
+            "runtime_s": 30.7,
+            "recall_cv": [
+                0.6083,
+                0.61729,
+                0.62329,
+                0.61601,
+                0.6243
+            ],
+            "auc_cv": [
+                0.91751,
+                0.92121,
+                0.9207,
+                0.92415,
+                0.92447
+            ]
+        },
+        {
+            "experiment": "B_EXP03_NO_CAPITAL_FLAG",
+            "timestamp": "2026-03-12T00:25:56.981792",
+            "phase": "B",
+            "n_features": 24,
+            "new_features": [
+                "age_bins",
+                "capital_net",
+                "has_capital_activity",
+                "hours_category",
+                "edu_hours_interaction",
+                "is_married",
+                "is_high_edu",
+                "exec_managerial_flag",
+                "married_highEdu_interaction",
+                "age_edu_interaction",
+                "overtime_professional_flag",
+                "private_sector_flag"
+            ],
+            "auc_mean": 0.92154,
+            "auc_std": 0.00208,
+            "f1_mean": 0.69008,
+            "f1_std": 0.00545,
+            "recall_mean": 0.61784,
+            "recall_std": 0.00775,
+            "precision_mean": 0.78161,
+            "delta_auc": 0.00151,
+            "delta_f1": 0.00948,
+            "delta_recall": 0,
+            "runtime_s": 36.81,
+            "recall_cv": [
+                0.60959,
+                0.61216,
+                0.62243,
+                0.6143,
+                0.63072
+            ],
+            "auc_cv": [
+                0.9183,
+                0.92158,
+                0.92035,
+                0.92393,
+                0.92355
+            ]
+        },
+        {
+            "experiment": "B_EXP04_NO_MARRIED_EDU",
+            "timestamp": "2026-03-12T00:26:33.670675",
+            "phase": "B",
+            "n_features": 24,
+            "new_features": [
+                "age_bins",
+                "capital_net",
+                "has_capital_activity",
+                "hours_category",
+                "edu_hours_interaction",
+                "is_married",
+                "is_high_edu",
+                "high_capital_gain_flag",
+                "exec_managerial_flag",
+                "age_edu_interaction",
+                "overtime_professional_flag",
+                "private_sector_flag"
+            ],
+            "auc_mean": 0.92208,
+            "auc_std": 0.00227,
+            "f1_mean": 0.69181,
+            "f1_std": 0.00569,
+            "recall_mean": 0.62152,
+            "recall_std": 0.00786,
+            "precision_mean": 0.78012,
+            "delta_auc": 0.00204,
+            "delta_f1": 0.0112,
+            "delta_recall": 0,
+            "runtime_s": 36.68,
+            "recall_cv": [
+                0.61087,
+                0.61729,
+                0.62543,
+                0.61986,
+                0.63415
+            ],
+            "auc_cv": [
+                0.91812,
+                0.9228,
+                0.92115,
+                0.92423,
+                0.92408
+            ]
+        },
+        {
+            "experiment": "B_EXP05_INTERACTIONS_ONLY",
+            "timestamp": "2026-03-12T00:27:09.918405",
+            "phase": "B",
+            "n_features": 21,
+            "new_features": [
+                "age_bins",
+                "capital_net",
+                "has_capital_activity",
+                "hours_category",
+                "edu_hours_interaction",
+                "is_married",
+                "is_high_edu",
+                "married_highEdu_interaction",
+                "age_edu_interaction"
+            ],
+            "auc_mean": 0.9209,
+            "auc_std": 0.00204,
+            "f1_mean": 0.68754,
+            "f1_std": 0.00542,
+            "recall_mean": 0.61758,
+            "recall_std": 0.00548,
+            "precision_mean": 0.77546,
+            "delta_auc": 0.00087,
+            "delta_f1": 0.00694,
+            "delta_recall": 0,
+            "runtime_s": 36.24,
+            "recall_cv": [
+                0.61301,
+                0.61687,
+                0.62115,
+                0.61087,
+                0.62602
+            ],
+            "auc_cv": [
+                0.91752,
+                0.9223,
+                0.91957,
+                0.92234,
+                0.92278
+            ]
+        },
+        {
+            "experiment": "B_EXP06_INDICATORS_ONLY",
+            "timestamp": "2026-03-12T00:27:42.929151",
+            "phase": "B",
+            "n_features": 23,
+            "new_features": [
+                "age_bins",
+                "capital_net",
+                "has_capital_activity",
+                "hours_category",
+                "edu_hours_interaction",
+                "is_married",
+                "is_high_edu",
+                "high_capital_gain_flag",
+                "exec_managerial_flag",
+                "overtime_professional_flag",
+                "private_sector_flag"
+            ],
+            "auc_mean": 0.92178,
+            "auc_std": 0.00244,
+            "f1_mean": 0.68877,
+            "f1_std": 0.00691,
+            "recall_mean": 0.61356,
+            "recall_std": 0.00712,
+            "precision_mean": 0.78511,
+            "delta_auc": 0.00174,
+            "delta_f1": 0.00817,
+            "delta_recall": 0,
+            "runtime_s": 33.01,
+            "recall_cv": [
+                0.60402,
+                0.61087,
+                0.61387,
+                0.61301,
+                0.62602
+            ],
+            "auc_cv": [
+                0.91773,
+                0.92167,
+                0.92092,
+                0.92448,
+                0.92409
+            ]
+        }
+    ],
+    "feature_registry": {
+        "age_bins": {
+            "first_seen": "EXP01_ALL_FEATURES",
+            "delta_auc_history": [
+                0.0006166464832735308,
+                0.0006170502323367133,
+                -0.00000476633729773468,
+                0.0015196496693234973,
+                0.001512358137722547,
+                0.0020439744946201266,
+                0.0008698474964967673,
+                0.0017442128331403017
+            ],
+            "stable": true,
+            "delta_recall_history": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "rejected": false,
+            "rejection_reason": "None"
+        },
+        "capital_net": {
+            "first_seen": "EXP01_ALL_FEATURES",
+            "delta_auc_history": [
+                0.0006166464832735308,
+                -0.00003575879835104878,
+                0.0006170502323367133,
+                0.0015196496693234973,
+                0.001512358137722547,
+                0.0020439744946201266,
+                0.0008698474964967673,
+                0.0017442128331403017
+            ],
+            "stable": true,
+            "delta_recall_history": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "rejected": false,
+            "rejection_reason": "None"
+        },
+        "has_capital_activity": {
+            "first_seen": "EXP01_ALL_FEATURES",
+            "delta_auc_history": [
+                0.0006166464832735308,
+                -0.00003575879835104878,
+                0.0006170502323367133,
+                0.0015196496693234973,
+                0.0015763146179735843,
+                0.001512358137722547,
+                0.0020439744946201266,
+                0.0008698474964967673,
+                0.0017442128331403017
+            ],
+            "stable": true,
+            "delta_recall_history": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "rejected": false,
+            "rejection_reason": "None"
+        },
+        "hours_category": {
+            "first_seen": "EXP01_ALL_FEATURES",
+            "delta_auc_history": [
+                0.0006166464832735308,
+                0.0006170502323367133,
+                -0.00000476633729773468,
+                0.0015196496693234973,
+                0.001512358137722547,
+                0.0020439744946201266,
+                0.0008698474964967673,
+                0.0017442128331403017
+            ],
+            "stable": true,
+            "delta_recall_history": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "rejected": false,
+            "rejection_reason": "None"
+        },
+        "edu_hours_interaction": {
+            "first_seen": "EXP01_ALL_FEATURES",
+            "delta_auc_history": [
+                0.0006166464832735308,
+                0.0010408941942623429,
+                0.0006170502323367133,
+                0.0015196496693234973,
+                0.001512358137722547,
+                0.0020439744946201266,
+                0.0008698474964967673,
+                0.0017442128331403017
+            ],
+            "stable": true,
+            "delta_recall_history": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "rejected": false,
+            "rejection_reason": "None"
+        },
+        "is_married": {
+            "first_seen": "EXP01_ALL_FEATURES",
+            "delta_auc_history": [
+                0.0006166464832735308,
+                0.0010408941942623429,
+                0.0006170502323367133,
+                0.0015196496693234973,
+                0.001512358137722547,
+                0.0020439744946201266,
+                0.0008698474964967673,
+                0.0017442128331403017
+            ],
+            "stable": true,
+            "delta_recall_history": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "rejected": false,
+            "rejection_reason": "None"
+        },
+        "is_high_edu": {
+            "first_seen": "EXP01_ALL_FEATURES",
+            "delta_auc_history": [
+                0.0006166464832735308,
+                0.0010408941942623429,
+                0.0015196496693234973,
+                0.001512358137722547,
+                0.0020439744946201266,
+                0.0008698474964967673,
+                0.0017442128331403017
+            ],
+            "stable": true,
+            "delta_recall_history": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "rejected": false,
+            "rejection_reason": "None"
+        },
+        "high_capital_gain_flag": {
+            "first_seen": "B_EXP01_ALL_AB",
+            "delta_auc_history": [
+                0.0015196496693234973,
+                0.0015763146179735843,
+                0.0020439744946201266,
+                0.0017442128331403017
+            ],
+            "delta_recall_history": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "stable": true,
+            "rejected": false,
+            "rejection_reason": "None"
+        },
+        "exec_managerial_flag": {
+            "first_seen": "B_EXP01_ALL_AB",
+            "delta_auc_history": [
+                0.0015196496693234973,
+                0.0015763146179735843,
+                0.001512358137722547,
+                0.0020439744946201266,
+                0.0017442128331403017
+            ],
+            "delta_recall_history": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "stable": true,
+            "rejected": false,
+            "rejection_reason": "None"
+        },
+        "married_highEdu_interaction": {
+            "first_seen": "B_EXP01_ALL_AB",
+            "delta_auc_history": [
+                0.0015196496693234973,
+                0.0015763146179735843,
+                0.001512358137722547,
+                0.0008698474964967673
+            ],
+            "delta_recall_history": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "stable": true,
+            "rejected": false,
+            "rejection_reason": "None"
+        },
+        "age_edu_interaction": {
+            "first_seen": "B_EXP01_ALL_AB",
+            "delta_auc_history": [
+                0.0015196496693234973,
+                0.0015763146179735843,
+                0.001512358137722547,
+                0.0020439744946201266,
+                0.0008698474964967673
+            ],
+            "delta_recall_history": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "stable": true,
+            "rejected": false,
+            "rejection_reason": "None"
+        },
+        "overtime_professional_flag": {
+            "first_seen": "B_EXP01_ALL_AB",
+            "delta_auc_history": [
+                0.0015196496693234973,
+                0.0015763146179735843,
+                0.001512358137722547,
+                0.0020439744946201266,
+                0.0017442128331403017
+            ],
+            "delta_recall_history": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "stable": true,
+            "rejected": false,
+            "rejection_reason": "None"
+        },
+        "private_sector_flag": {
+            "first_seen": "B_EXP01_ALL_AB",
+            "delta_auc_history": [
+                0.0015196496693234973,
+                0.0015763146179735843,
+                0.001512358137722547,
+                0.0020439744946201266,
+                0.0017442128331403017
+            ],
+            "delta_recall_history": [
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "stable": true,
+            "rejected": false,
+            "rejection_reason": "None"
+        }
+    },
+    "rejection_log": [],
+    "fairness_results": {
+        "race": [
+            {
+                "group": "Other",
+                "n": 406,
+                "TPR": 0.48,
+                "FPR": 0.0225,
+                "Precision": 0.75,
+                "Recall": 0.48,
+                "F1": 0.5854,
+                "AUC": 0.9567,
+                "FN_rate": 0.52,
+                "TP": 24,
+                "FP": 8,
+                "FN": 26,
+                "TN": 348
+            },
+            {
+                "group": "Black",
+                "n": 4683,
+                "TPR": 0.5318,
+                "FPR": 0.0192,
+                "Precision": 0.7921,
+                "Recall": 0.5318,
+                "F1": 0.6364,
+                "AUC": 0.9513,
+                "FN_rate": 0.4682,
+                "TP": 301,
+                "FP": 79,
+                "FN": 265,
+                "TN": 4038
+            },
+            {
+                "group": "White",
+                "n": 41714,
+                "TPR": 0.631,
+                "FPR": 0.0576,
+                "Precision": 0.7888,
+                "Recall": 0.631,
+                "F1": 0.7011,
+                "AUC": 0.9218,
+                "FN_rate": 0.369,
+                "TP": 6689,
+                "FP": 1791,
+                "FN": 3912,
+                "TN": 29322
+            },
+            {
+                "group": "Amer-Indian-Eskimo",
+                "n": 470,
+                "TPR": 0.5818,
+                "FPR": 0.0193,
+                "Precision": 0.8,
+                "Recall": 0.5818,
+                "F1": 0.6737,
+                "AUC": 0.9187,
+                "FN_rate": 0.4182,
+                "TP": 32,
+                "FP": 8,
+                "FN": 23,
+                "TN": 407
+            },
+            {
+                "group": "Asian-Pac-Islander",
+                "n": 1517,
+                "TPR": 0.6626,
+                "FPR": 0.0912,
+                "Precision": 0.7285,
+                "Recall": 0.6626,
+                "F1": 0.694,
+                "AUC": 0.9043,
+                "FN_rate": 0.3374,
+                "TP": 271,
+                "FP": 101,
+                "FN": 138,
+                "TN": 1007
+            }
+        ],
+        "gender": [
+            {
+                "group": "Female",
+                "n": 16176,
+                "TPR": 0.5523,
+                "FPR": 0.0148,
+                "Precision": 0.821,
+                "Recall": 0.5523,
+                "F1": 0.6604,
+                "AUC": 0.948,
+                "FN_rate": 0.4477,
+                "TP": 977,
+                "FP": 213,
+                "FN": 792,
+                "TN": 14194
+            },
+            {
+                "group": "Male",
+                "n": 32614,
+                "TPR": 0.6396,
+                "FPR": 0.0781,
+                "Precision": 0.7814,
+                "Recall": 0.6396,
+                "F1": 0.7034,
+                "AUC": 0.9055,
+                "FN_rate": 0.3604,
+                "TP": 6340,
+                "FP": 1774,
+                "FN": 3572,
+                "TN": 20928
+            }
+        ],
+        "marital_status": [
+            {
+                "group": "Never-married",
+                "n": 16082,
+                "TPR": 0.3752,
+                "FPR": 0.0009,
+                "Precision": 0.9516,
+                "Recall": 0.3752,
+                "F1": 0.5382,
+                "AUC": 0.944,
+                "FN_rate": 0.6248,
+                "TP": 275,
+                "FP": 14,
+                "FN": 458,
+                "TN": 15335
+            },
+            {
+                "group": "Separated",
+                "n": 1530,
+                "TPR": 0.3333,
+                "FPR": 0.0028,
+                "Precision": 0.8919,
+                "Recall": 0.3333,
+                "F1": 0.4853,
+                "AUC": 0.9141,
+                "FN_rate": 0.6667,
+                "TP": 33,
+                "FP": 4,
+                "FN": 66,
+                "TN": 1427
+            },
+            {
+                "group": "Married-spouse-absent",
+                "n": 627,
+                "TPR": 0.3103,
+                "FPR": 0.0018,
+                "Precision": 0.9474,
+                "Recall": 0.3103,
+                "F1": 0.4675,
+                "AUC": 0.8997,
+                "FN_rate": 0.6897,
+                "TP": 18,
+                "FP": 1,
+                "FN": 40,
+                "TN": 568
+            },
+            {
+                "group": "Widowed",
+                "n": 1518,
+                "TPR": 0.3281,
+                "FPR": 0.0007,
+                "Precision": 0.9767,
+                "Recall": 0.3281,
+                "F1": 0.4912,
+                "AUC": 0.8952,
+                "FN_rate": 0.6719,
+                "TP": 42,
+                "FP": 1,
+                "FN": 86,
+                "TN": 1389
+            },
+            {
+                "group": "Divorced",
+                "n": 6630,
+                "TPR": 0.3308,
+                "FPR": 0.003,
+                "Precision": 0.925,
+                "Recall": 0.3308,
+                "F1": 0.4874,
+                "AUC": 0.8862,
+                "FN_rate": 0.6692,
+                "TP": 222,
+                "FP": 18,
+                "FN": 449,
+                "TN": 5941
+            },
+            {
+                "group": "Married-civ-spouse",
+                "n": 22366,
+                "TPR": 0.6736,
+                "FPR": 0.1572,
+                "Precision": 0.7753,
+                "Recall": 0.6736,
+                "F1": 0.7209,
+                "AUC": 0.851,
+                "FN_rate": 0.3264,
+                "TP": 6721,
+                "FP": 1948,
+                "FN": 3257,
+                "TN": 10440
+            },
+            {
+                "group": "Married-AF-spouse",
+                "n": 37,
+                "TPR": 0.4286,
+                "FPR": 0.0435,
+                "Precision": 0.8571,
+                "Recall": 0.4286,
+                "F1": 0.5714,
+                "AUC": 0.8307,
+                "FN_rate": 0.5714,
+                "TP": 6,
+                "FP": 1,
+                "FN": 8,
+                "TN": 22
+            }
+        ]
+    },
+    "mitigation_results": {
+        "group_thresholds": {
+            "Black": 0.313161853965032,
+            "White": 0.4136904208885614,
+            "Asian-Pac-Islander": 0.35623339082906935,
+            "Amer-Indian-Eskimo": 0.4528519772727103,
+            "Other": 0.30557613774436015
+        },
+        "target_recall": 0.7,
+        "mitigation_column": "race"
+    },
+    "final_results": {
+        "AUC": 0.9167773497340377,
+        "F1": 0.6996344872070522,
+        "Recall": 0.6964897260273972,
+        "Precision": 0.7028077753779698,
+        "n_features": 25,
+        "delta_auc_vs_baseline": -0.00325429573981717,
+        "delta_f1_vs_baseline": 0.01903024790335983
+    }
+}
